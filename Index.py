@@ -1,6 +1,5 @@
-age = int(input("How old are you? "))
-
-if age <= 18 :
-  print("You are not old enough yet. ")
-else :
-  print("You have to vote! ")
+food = input('What are we eating? ')
+if food == 'cookies':
+  print('Om nom nom nom!')
+else:
+  print('Me want cookie!')
