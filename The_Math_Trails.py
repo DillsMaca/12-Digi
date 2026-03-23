@@ -39,12 +39,23 @@ screen_height = 1000
 screen = pygame.display.set_mode((screen_width, screen_height))
 pygame.display.set_caption("The Number Trials")
 
+
+#load images (character and backgrounds)
+bg_img = pygame.image.load('img/sky.png')
+# Scale image to fill the screen dimensions
+bg_img = pygame.transform.scale(bg_img, (screen_width, screen_height))
+
+#sun_img = pygame.image.load('img/sun.png')
+
+
 #creating loop so the game keeps running
 run = True
-while run == True:
-#adding a way to close the game
+while run: # == True:
+    # adding a way to close the game
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
-            run == False
+            run = False
+        screen.blit(bg_img, (0, 0))
+        #screen.blit(sun_img, (100, 100))
     pygame.display.update()
 pygame.quit()
