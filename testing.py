@@ -49,3 +49,19 @@ font = pygame.font.SysFont(None, 40)
 # game state value
 game_state = "START_SCREEN"
 
+
+
+
+
+"""class World():
+    def __init__(self, data):
+
+    #load images
+    platform_x.png_img = os.path.join("img", "platform_x.png")"""
+
+class World():
+    def __init__(self, data):
+        # This line must be indented (pushed to the right)
+        # Use an underscore instead of a dot for the variable name
+        path = os.path.join("img", "platform_x.png")
+        self.platform_x_img = pygame.image.load(path)
