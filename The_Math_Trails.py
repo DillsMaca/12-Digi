@@ -28,11 +28,29 @@ def draw_grid():
         pygame.draw.line(screen, (255, 255, 255), (line * tile_size, 0), (line * tile_size, screen_height))
 
 
-#class World():
-    #def __init__(self, data):
 
-    #load images
-    #platform_img = pygame.image.load("img/platform.png")
+
+class World():
+    def __init__(self, data):
+        self.tile_list = []
+
+        # This line must be indented (pushed to the right)
+        # Use an underscore instead of a dot for the variable name
+        platform.png_img = pygame.image.load('img/platform.png')
+
+        row_count = 0
+        for row in data:
+            col_count = 0
+            for tile in row:
+                if tile == 1:
+                    img = pygame.transform.scale(platform.png, (tile_size, tile_size))
+                    img_rect = img.get_rect()
+                    img_rect.x = col_count * tile_size
+                    img_rect.y = row_count * tile_size
+                    tile = (img, img_rect)
+                    self.tile_list.append(tile)
+                col_count += 1
+            row_count += 1
 
 world_data = [
 [1, 1, 1, 1, 1],
@@ -41,6 +59,8 @@ world_data = [
 [1, 0, 0, 0, 1],
 [1, 1, 1, 1, 1],
 ]
+
+world = World(world_data)
 #creating loop so the game keeps running
 run = True
 while run: # == True:
