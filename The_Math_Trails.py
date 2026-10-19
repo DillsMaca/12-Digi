@@ -9,7 +9,7 @@ import random
 
 pygame.init()
 
-game_clock = pygame.time.Clock()
+GAME_CLOCK = pygame.time.Clock()
 FPS = 60
 # Defining variables
 SCREEN_WIDTH = 1000
